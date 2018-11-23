@@ -13,35 +13,35 @@ interface
 
 type
 	generic TMatrix<T>=class
-		public type
-			PT=^T;
-		private
-			data:PT;
-			h,w:DWord;
-		public
-			constructor Create();
-			constructor Create(hh,ww:DWord);overload;
-			destructor Destroy();override;
-			procedure SetSize(hh,ww:DWord);
-			property Height:DWord read h;
-			property Width:DWord read w;
-			function GetValue(i,j:DWord):T;
-			procedure SetValue(i,j:DWord;d:T);
-			property Items[i,j:DWord]:T read GetValue write SetValue;
+	public type
+		PT=^T;
+	private
+		data:PT;
+		h,w:DWord;
+	public
+		constructor Create();
+		constructor Create(hh,ww:DWord);overload;
+		destructor Destroy();override;
+		procedure SetSize(hh,ww:DWord);
+		property Height:DWord read h;
+		property Width:DWord read w;
+		function GetValue(i,j:DWord):T;
+		procedure SetValue(i,j:DWord;d:T);
+		property Items[i,j:DWord]:T read GetValue write SetValue;
 	end;
 	
 	generic TMatrixOperator<T>=class
-		public type
-			TM=specialize TMatrix<T>;
-		private
-			errmsg:string;
-		public
-			constructor Create();
-			function Add(a,b:TM):TM;
-			function Sub(a,b:TM):TM;
-			function Mul(a:TM;b:T):TM;
-			function Mul(a,b:TM):TM;
-			function GetErr:string;
+	public type
+		TM=specialize TMatrix<T>;
+	private
+		errmsg:string;
+	public
+		constructor Create();
+		function Add(a,b:TM):TM;
+		function Sub(a,b:TM):TM;
+		function Mul(a:TM;b:T):TM;
+		function Mul(a,b:TM):TM;
+		function GetErr:string;
 	end;
 
 implementation
