@@ -6,11 +6,7 @@ Matrix——矩阵类
 Bitset——压位二进制数组
 
 # 将来会有的
-$\sigma^233_233$
-BigNumbers——大数类:
-\left \{ \begin{aligned}
-BigInteger——大整数类 \\
-BigFraction——大分数类 \\
-BigComplex——大复数类 \\
-\end{aligned} \right.
-$$
+1. BigNumbers——大数类:
+* BigInteger——大整数类
+* BigFraction——大分数类
+* BigComplex——大复数类
