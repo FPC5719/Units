@@ -1,0 +1,20 @@
+{$MODE DELPHI}
+uses
+	pds_list;
+type
+	tli=TList<longint>;
+var
+	tl:tli;
+	t:tli.PN;
+begin
+	tl:=tli.Create();
+	tl.Insert(0,233);
+	tl.Insert(0,2333);
+	tl.Insert(2,23333);
+	t:=tl.Left();
+	writeln(t.val);
+	t:=tl.right;
+	tl.Delete(1);
+	t:=tl.Right();
+	writeln(t.val);
+end.
